@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ locale_name }}">
+    <head>
+        <title>{{ head.title }}</title>
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+        <link href="{{ head.favicon }}" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{{stylesheet '/assets/css/theme.css'}}}
+        {{ getFontsCollection }}
+
+        <script>
+            // Change document class from no-js to js so we can detect this in css
+            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        </script>
+
+        {{{ head.scripts }}}
+
+        {{ inject 'themeSettings' theme_settings }}
+        {{inject 'urls' urls}}
+        <style>
+            {{> components/amp/css/product-options}}
+        </style>
+
+        {{!-- BundleB2B --}}
+        {{~inject "customer" customer}}
+        {{~inject 'store_hash' settings.store_hash}}
+        {{~inject "settings" settings}}
+        {{~inject "page_type" page_type}}
+        {{~inject "currency_selector" currency_selector}}
+        {{!-- BundleB2B --}}
+    </head>
+    <body>
+        <div class="icons-svg-sprite">{{> components/amp/common/icon-defs }}</div>
+
+        {{#block "page"}} {{/block}}
+
+        <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+        <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+
+        <script>
+            // Exported in app.js
+            window.stencilBootstrap("{{page_type}}", {{jsContext}}, false).load();
+
+            {{!-- BundleB2B --}}
+            window.jsContext = JSON.parse({{jsContext}})
+            {{!-- BundleB2B --}}
+        </script>
+        <script type="text/javascript" charset="utf-8">
+            function postHeight() {
+                window.parent.postMessage({
+                    sentinel: 'amp',
+                    type: 'embed-size',
+                    height: window.document.querySelector('body').offsetHeight
+                }, '*');
+            }
+
+            window.addEventListener("DOMContentLoaded", function () {
+                window.addEventListener('resize', postHeight);
+                postHeight();
+            }, false);
+        </script>
+
+    </body>
+</html>
+
+{{!-- BundleB2B --}}
+<script>
+ const inPages = () => {
+     const urlArray = [          
+        '/buy-again/',
+        '/address-book/',
+        '/create-quote/',
+        '/quote-detail/',
+        '/quote/',
+        '/quote-edit/',
+        '/quote-list/',
+        '/quotes-list/',
+        '/dashboard/',
+        '/order-detail/',
+        '/quick-order-pad/',
+        '/shopping-list/',
+        '/shopping-lists/',
+        '/user-management/',
+        '/invoices/',
+        '/invoice-payment/',
+        '/invoice-details/',
+        '/invoice-payment-receipt/',
+        '/account.php',
+    ];
+     const current = window.location.pathname;
+     return urlArray.includes(current);
+   };
+   if(!inPages()) {
+      document.querySelector('.body').style.display = "block";
+   }
+</script>
+{{!-- BundleB2B --}}

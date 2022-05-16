@@ -1,0 +1,120 @@
+.body {
+  display: none;
+}
+.button:hover,
+.button:focus,
+.button.is-active,
+.button.active {
+    color: inherit!important;
+}
+.button {
+  color: inherit;
+  border-color: #2f2f2b;
+}
+.button:hover {
+  color: inherit;
+  border-color: #2f2f2b;
+}
+.button--primary {
+  color: white;
+  border-color: #e74c3c;
+}
+.button--primary:hover {
+  color: white;
+  border-color: #ff762b;
+}
+.pagination {
+  width: auto!important;
+}
+.pagination-item.pagination-item--next > a.pagination-link {
+  padding: 6px 6px 4px 19px !important;
+}
+
+.swal2-container {
+  z-index: 100009!important;
+}
+
+.shopping-list-status .form-select {
+  width: 180px;
+}
+
+#shopping_list_table .col-action {
+  padding-bottom: 0!important;
+}
+td.col-action .action-wrap .action-lists {
+  position: relative!important;
+}
+
+#pc-quickorderpad-entry {
+  display: flex;
+  min-width: 150px;
+}
+#my-quote-entry {
+  display: flex;
+  min-width: 120px;
+}
+#quickSearch {
+  min-width: 250px !important;
+  padding-left: 0 !important;
+}
+
+.b2b-loading-overlay {
+  z-index: 99999!important;
+}
+
+header div#menu {
+  z-index: 999!important;
+}
+.salerep-infobox {
+  z-index: 1000!important;
+}
+.tingle-modal {
+  z-index: 100000!important;
+}
+.account-orderStatus-label {
+    color: stencilColor('color-textBase')!important;
+}
+.previewCartAction-checkout, 
+.previewCartAction-viewCart {
+    padding-left: unset!important;
+}
+#shopping_list_table .col-action .action-lists {
+  width: 176px!important;
+  bottom: -18px!important;
+}
+.rfq-form-wrapper .form-container {
+  z-index: 100000!important;
+}
+
+#account-dropdown-signout-list .navBar--sub {
+  margin-bottom: 0;
+}
+.modal-background {
+  z-index: 100004;
+}
+#modal-user-management-edit-form,
+#modal-user-management-new-form,
+#previewModal {
+  z-index: 100005 !important;
+}
+
+#modal {
+  z-index: 100005!important;
+}
+.quotes .quotes-search-form {
+  line-height: normal !important;
+}
+
+#quote-list-container {
+  .dropdown-menu.show-action {
+      width: unset !important;
+  }
+}
+
+#add-to-cart-wrapper {
+  .rfq-button-container.rfq-pdp-button-container  {
+    .add-to-quote {
+      border-radius: 25px;
+    }
+  }
+}
