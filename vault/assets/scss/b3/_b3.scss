@@ -5,15 +5,17 @@
 .button:focus,
 .button.is-active,
 .button.active {
-    color: inherit!important;
+    // color: inherit!important;
+    color: #fff!important;
 }
 .button {
   color: inherit;
-  border-color: #2f2f2b;
+  color: #fff;
+  border-color: #151515;
 }
 .button:hover {
   color: inherit;
-  border-color: #2f2f2b;
+  border-color: #151515;
 }
 .button--primary {
   color: white;

@@ -323,7 +323,7 @@ in 1.0.4 as well as the following.
 - Adjusted option:checked color within config file so that checkmark for product options is visible.
 - Adjusted alertbox background-color for inventory out of stock notifications on product page when tracking inventory levels by options so that they are visible and readable.
 - Character limits within text fields will now show a popup error when set requirements are not met after clicking add to cart button.
-- Updated input-font-color within config.json file to #2f2f2b for all variations just like “Bright” variation so that text is more visible.
+- Updated input-font-color within config.json file to #151515 for all variations just like “Bright” variation so that text is more visible.
 - Removed text-transform: capitalize; rule from .form-input.
 - Qty increment / decrement boxes styling cleaned up.
 - Updated js library, package.json, all webpack files, karma.config.js, manifest.json, & amp files to Cornerstone version 3.5.0

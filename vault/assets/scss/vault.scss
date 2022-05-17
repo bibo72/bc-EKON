@@ -971,7 +971,7 @@ span.countPill.cart-quantity.countPill--positive:after {
 
 // CLICK FUNCTIONALITY
 .mega-cat-nav .container-header.btn.active {
-  background-color: #ffffff;
+  // background-color: #ffffff;
   padding-right: 15px;
 }
 
@@ -1503,7 +1503,7 @@ li.category {
 }
 
 .slick-next::before, .slick-prev::before {
-  width: 1rem;
+  // width: 1rem;
   height: 1rem;
   position: relative;
 }
@@ -1638,9 +1638,10 @@ h2.page-heading.showcase-products {
 }
 
 a.button.button--small.card-figcaption-button, label.button.button--small.card-figcaption-button {
-  font-style: italic;
-  font-weight: 300;
-  text-transform: capitalize;
+  // font-style: italic;
+  // font-weight: 300;
+  font-weight: 700;
+  text-transform: uppercase;
   margin: 0 auto;
   font-size: 12px;
 }
@@ -1815,10 +1816,11 @@ ul#currencySelection {
 
 .backtoTop .slick-prev::before {
   transform: rotate(90deg);
-  left: 3px;
-  top: 2px;
-  width: 1.5rem;
+  left: 0;
+  top: 0;
+  // width: 1.5rem;
   height: 1.5rem;
+  margin: auto;
 }
 
 .backtoTop button:hover .slick-prev:before {
@@ -3959,7 +3961,7 @@ ul.navPage-subMenu-list.all-second-level-plus-container.flyout-page-wrapper {
 }
 .flyout-pagination-container.top a.navPages-action.next svg, .flyout-pagination-container.top a.navPages-action.previous svg {
     display: block!important;
-    fill: #2f2f2b!important;
+    fill: #151515!important;
 }
 .flyout-pagination-container.top a.navPages-action svg {
     stroke: initial;
@@ -5243,7 +5245,7 @@ body.hasAdminBar #menu.fixed-again {
   border-color: #d7d7d7 !important;
 }
 .button.button--small.card-figcaption-button {
-  border-color: #1f1f1f !important;
+  border-color: #133579 !important;
 }
 
 
@@ -6235,7 +6237,7 @@ li.navUser-item.quicksearch.mobile svg {
     z-index: 50;
 }
 .quickSearch-mobileToggle .mobileMenu-toggleIcon, .quickSearch-mobileToggle .mobileMenu-toggleIcon::before, .quickSearch-mobileToggle .mobileMenu-toggleIcon::after {
-    background: #2f2f2b;
+    background: #151515;
     content: "";
     display: block;
     height: 2px;
