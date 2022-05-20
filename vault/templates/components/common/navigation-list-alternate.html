@@ -1,21 +1,64 @@
 <div class="desktop">
 {{#if children}}
-    <a class="navPages-action navPages-action-depth-max has-subMenu is-root second-level-parent sideNavTopLevel needsclick{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}
-    <i class="icon navPages-action-moreIcon closed topLevel" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
+    <a class="navPages-action one_category navPages-action-depth-max has-subMenu is-root second-level-parent sideNavTopLevel needsclick{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}
+ <!--    <i class="icon navPages-action-moreIcon closed topLevel" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i> -->
     </a>
-    {{> components/common/navigation-dropdown}}
+    {{!> components/common/navigation-dropdown}}
+    {{#each children}}
+        {{#if children}}
+            <a class="two_category" href="{{url}}">{{name}}</a>
+            {{#each children}}
+                {{#if children}}
+                    <a class="three_category" href="{{url}}">&nbsp;&nbsp;{{name}}</a>
+                    {{#each children}}
+                        {{#if children}}
+                        <a class="four_category" href="{{url}}">&nbsp;&nbsp;&nbsp;&nbsp;{{name}}</a>
+                        {{else}}
+                        <a class="four_category" href="{{url}}">&nbsp;&nbsp;&nbsp;&nbsp;{{name}}</a>
+                        {{/if}}
+                    {{/each}}
+                {{else}}
+                    <a class="three_category" href="{{url}}">&nbsp;&nbsp;{{name}}</a>
+                {{/if}}
+            {{/each}}
+        {{else}}
+            <a class="two_category" href="{{url}}">{{name}}</a>
+        {{/if}}
+    {{/each}}
+            
 {{else}}
-    <a class="navPages-action single-level sideNavTopLevel needsclick{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
+    <a class="navPages-action one_category single-level sideNavTopLevel needsclick{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
 {{/if}}
 </div>
 
 <div class="mobile">
 {{#if children}}
-    <a class="navPages-action navPages-action-depth-max has-subMenu is-root second-level-parent sideNavTopLevel needsclick{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}
+    <a class="navPages-action one_category navPages-action-depth-max has-subMenu is-root second-level-parent sideNavTopLevel needsclick{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}
     </a>
-     <i class="icon navPages-action-moreIcon closed topLevel" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i>
-    {{> components/common/navigation-dropdown}}
+ <!--     <i class="icon navPages-action-moreIcon closed topLevel" aria-hidden="true"><svg><use xlink:href="#icon-chevron-down" /></svg></i> -->
+    {{!> components/common/navigation-dropdown}}
+    {{#each children}}
+    {{#if children}}
+        <a class="two_category" href="{{url}}">{{name}}</a>
+        {{#each children}}
+            {{#if children}}
+                <a class="three_category" href="{{url}}">&nbsp;&nbsp;{{name}}</a>
+                {{#each children}}
+                    {{#if children}}
+                    <a class="four_category" href="{{url}}">&nbsp;&nbsp;&nbsp;&nbsp;{{name}}</a>
+                    {{else}}
+                    <a class="four_category" href="{{url}}">&nbsp;&nbsp;&nbsp;&nbsp;{{name}}</a>
+                    {{/if}}
+                {{/each}}
+            {{else}}
+                <a class="three_category" href="{{url}}">&nbsp;&nbsp;{{name}}</a>
+            {{/if}}
+        {{/each}}
+    {{else}}
+        <a class="two_category" href="{{url}}">{{name}}</a>
+    {{/if}}
+{{/each}}
 {{else}}
-    <a class="navPages-action single-level sideNavTopLevel needsclick{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
+    <a class="navPages-action one_category single-level sideNavTopLevel needsclick{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
 {{/if}}
 </div>

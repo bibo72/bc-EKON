@@ -1,0 +1,422 @@
+// PASTE CUSTOM STYLING HERE
+hr.border{
+    border-color: #70706E;
+}
+.mega-cat-dropdown::-webkit-scrollbar-thumb{
+    background:#cdcccc !important ;
+}
+//  header
+header .navUser ul.navUser-section.navUser-section--alt {
+    padding-top: 0;
+}
+
+ul.navUser-section li.navUser-item #validate-company.navUser-action {
+    display: none;
+}
+
+ul.navUser-section div.dropdown form.form {
+    display: flex !important;
+
+    .search-icon.submit {
+        top: 0;
+    }
+}
+
+.navPages-container {
+    .mega-cat-nav.active {
+        position: absolute;
+        width: 100%;
+
+        .mega-cat-dropdown {
+            width: 100%;
+            max-height: 390px;
+            height: max-content !important;
+        }
+    }
+}
+li.navPages-item.phone-number{
+    &:before {
+        color: #ffffff;
+    }
+}
+
+header div#menu .mega-cat-nav.active{
+    .navPages{
+        text-align: left;
+        .mega-cat-dropdown {
+            padding: 29px !important;     
+            height: 390px !important;      
+            .mega-content{
+                display: flex !important;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                width: 100%;
+                .inner{
+                    width: 30%;
+                    padding-left: 0;
+                    .fader{
+                        display: flex;
+                        flex-wrap: wrap;
+
+                    }
+                            
+                }
+            }
+           
+        }
+    }
+
+}
+
+div#menu .mega-cat-dropdown .mega-content  {
+    .container-header {
+        color: #133579 !important;
+        font-size: 22px !important;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    hr.border{
+        border-color: #E6E6E6;
+    }
+    .inner{
+        li.navPages-item{
+            word-break: break-word;
+            a{
+                text-decoration: none;
+                width: 100%;
+                display: inline-block;
+                &:hover{
+                    text-decoration: underline;
+                    color: #133579 !important;
+                }
+            }
+            .one_category{
+                color: #133579 !important;
+                font-size: 17px !important;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            .two_category,.three_category,.four_category{
+                font-size: 15px;
+                font-weight: normal;
+                text-decoration: none;
+            }
+            .two_category{
+                font-weight: bold;
+            }
+            @include breakpoint("medium") {
+                text-align: left;
+                display: inline-block; 
+                width: 50%;
+                &:nth-child(odd){
+                    padding-right: 2.5px;
+                }
+                &:nth-child(even){
+                    padding-left: 2.5px;
+                }
+            }
+            
+        }
+    }
+         
+}
+
+.nav-middle{
+    background-image: url("https://cdn11.bigcommerce.com/s-g0h3me329n/product_images/uploaded_images/menu-marketing-block2.png");
+    margin: 15px 0;
+    @include breakpoint("medium") {
+        width: calc(40% - 60px);
+        margin: 0 30px;
+    }
+    
+    
+}
+.nav-last{
+    background-image: url("https://cdn11.bigcommerce.com/s-g0h3me329n/product_images/uploaded_images/menu-marketing-block2.png");
+    @include breakpoint("medium") {
+       
+        width: 25%;
+      
+    }
+   
+}
+.nav-middle,.nav-last{
+    background-repeat: no-repeat;
+    height: 330px;
+    background-size: cover;
+    display:flex ;
+        flex-wrap: wrap;
+        align-items: flex-end;
+    a{
+        text-decoration: none;
+        text-align: left;
+        width: 100%;
+        padding: 15px;
+        @include breakpoint("medium") {
+            padding: 30px;
+        }
+    }
+    .text-wrapper{
+        h1,p{
+            margin: 0;
+        }
+        h1{
+            font-size: 24px;
+            color: #133579;
+            text-transform: uppercase;
+            @include breakpoint("medium"){
+                font-size: 30px;
+            }
+        }
+        p.banner-text{
+            font-size: 12px;
+            margin-bottom: 15px;
+            @include breakpoint("medium"){
+                font-size: 18px;
+            }
+        }
+        p.banner-byline-text{
+            font-size: 13px;
+            color: #f58229;
+            font-weight: bold;
+            text-transform: uppercase;
+            @include breakpoint("medium"){
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+
+//  container
+.featured-categories-banner.upper-banners.two-columns,
+.featured-categories-banner.mid-banners.two-columns,
+.featured-categories-banner.lower-banners.two-columns{
+    ul.featured-categories li.category{
+        .zoom-image-container{
+            @include breakpoint("medium") {
+               max-height: 200px;
+            }
+        }
+    }
+}
+
+.featured-categories-banner.upper-banners,
+.featured-categories-banner.mid-banners,
+.featured-categories-banner.lower-banners {
+    ul.featured-categories li.category{
+        .zoom-image-container{
+            position: relative;   
+            min-height: 150px;  
+            a img{
+                min-height: 150px;
+            }       
+        }
+        .text-wrapper {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding-right: 0;
+            padding: 15px;
+            @include breakpoint("medium") {
+                width: 70%;
+               
+            }
+            @media screen and (min-width:1024px){
+                width: 75%;
+                padding: 30px;
+            }
+            @media screen and (min-width:1124px){
+                width: 65%;
+                padding: 30px            
+            }
+            h1{
+                font-weight: bold;
+                font-size: 22px;
+                text-transform: uppercase;
+                @include breakpoint("small") {
+                    // height: ;
+                }
+                @media screen and (min-width:1024px) {
+                    
+                    font-size:30px;
+                }
+               
+            }
+            p{
+                font-size: 15px;
+                margin-bottom: 15px;
+                &.featured-banner-byline-text  {
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    
+    }
+}
+
+.featured-categories-banner.upper-banners.one-column,
+.featured-categories-banner.mid-banners.one-column,
+.featured-categories-banner.lower-banners.one-column{
+    ul.featured-categories li.category {
+        .zoom-image-container{
+            @include breakpoint("medium") {
+                max-height: 230px;
+            }
+        }
+        .text-wrapper {
+            @include breakpoint("medium") {
+                width: 55%;
+            }
+            
+        }
+
+    }
+}
+
+
+
+//    card
+.slick-list {
+    margin-left: -1px;
+}
+
+.productCarousel-slide.slick-slide {
+    .card-img-container {}
+}
+
+article.card {
+    border: 1px #D7D7D7 solid;
+    padding: 10px;
+
+    .card-img-container {
+        margin-bottom: 12px;
+    }
+
+    .card-body {
+        padding: 0 10px;
+        text-align: left;
+        .card-text{
+            color: inherit;
+            font-weight:bold;
+            font-size:14px;
+            line-height:1.5rem;
+            &[data-test-info-type="stock"]{
+                font-weight:normal;
+                font-size: 13px;
+                color: #037C11;
+                &.no-stock{
+                    color:#D53E07;
+                }
+            }
+            &[data-test-info-type="price"] {
+                font-size:15px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3; // 3 行
+                height: 54px; // 3行的高度
+                overflow: hidden;
+                /* autoprefixer: off  */
+                -webkit-box-orient: vertical;
+                /*  autoprefixer: on  */
+                .price-section{
+                    height: 18px;
+                }
+    
+            }
+            &[data-test-info-type="productRating"],&[data-test-info-type="brandName"]{
+                display:none;
+            }
+            
+        }
+
+        .card-title{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; // 2 行
+            height: 42px; // 2行的高度
+            overflow: hidden;
+            /* autoprefixer: off  */
+            -webkit-box-orient: vertical;
+            /*  autoprefixer: on  */
+        }
+        
+    }
+}
+
+
+//  footer
+div.newsletter-subscription-section{
+    border:none;
+    background-image:url("https://cdn11.bigcommerce.com/s-g0h3me329n/product_images/uploaded_images/newsletter-background.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    .half.left{
+        .newsletter-heading{
+            color:#133579;
+            font-weight:bold;
+            font-size: 25px;
+        }
+        .footer-newsletter-summary{
+            font-size: 16px;
+        }
+    }
+    .form{
+        .form-prefixPostfix.wrap{
+            input{
+               border:none; 
+               font-size: 15px;
+               &::-webkit-input-placeholder{
+                    color:#151515;
+                    font-style:italic;
+                }
+            }
+            
+        }
+    }
+    
+}
+footer.footer{
+    .footer-info{
+        article.footer-info-col{
+            padding-left: 30px;
+            padding-right: 30px;
+            &:first-child{
+                padding-left: 0;
+            }
+            &:last-child{
+                padding-right: 0;
+            }
+            &[data-section-type="footer-webPages"]{
+                ul.footer-info-list{
+                    label{
+                        font-size: 15px;
+                        font-weight: bold;
+                        text-transform: capitalize;
+                    }
+                    li {
+                        width: 100%;
+                        a{
+                            text-transform: none;
+                            cursor:default;
+                            padding: 0;
+                            font-size: 15px;
+                            font-weight: normal;
+                            display: inline-block;
+                            width: 100%;
+                            &:hover{
+                                color: #ffffff !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
+    width: 100% !important;
+}

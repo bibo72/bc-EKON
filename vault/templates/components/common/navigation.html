@@ -1,7 +1,7 @@
 <nav class="navUser">
     <ul class="navUser-section navUser-section--alt">
         {{#if customer.store_credit.value '>' 0}}
-            <li class="navUser-item">
+            <li class="navUser-item" style="display: none;">
                 <a class="navUser-action navUser-action--storeCredit"
                    data-dropdown="storeCredit-dropdown"
                    data-options="align:bottom"

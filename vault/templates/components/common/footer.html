@@ -1,4 +1,8 @@
 {{{region name="footer_above_full_width--global"}}}
+{{#if in_development}}
+  {{assignVar "Po_Box" "PO Box 1266, Gallatin TN, 37066"}} 
+  {{assignVar "email" "orders@ekonopac.com"}} 
+{{/if}}
 
 {{#if banners.bottom}}
     {{#if settings.data_tag_enabled}}
@@ -33,6 +37,7 @@
 <footer class="footer" role="contentinfo">
     <div class="container">
         <section class="footer-info">
+          {{!--
             <article class="footer-info-col footer-info-col--small-4" data-section-type="footer-webPages">
                 <h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5>
                 <ul class="footer-info-list">
@@ -57,7 +62,16 @@
                     </li>
                 </ul>
             </article>
-
+          --}}
+            <article class="footer-info-col footer-info-col--small-4" data-section-type="footer-company">
+              <h5 class="footer-info-heading">ABOUT THE COMPANY</h5>
+              <ul class="footer-info-list">
+                <li>
+                  <p>Our goal is to provide you with the best equipment at competitive prices. Service that can’t be beat and an end product that your students will love. ​With strategically placed packaging consultants located throughout the country we can service most anyone in the U.S.A.</p>
+                </li>
+              </ul>
+              
+            </article>
             <article class="footer-info-col footer-info-col--small-4 categories" data-section-type="footer-categories">
                 <h5 class="footer-info-heading">{{lang 'footer.categories'}}</h5>
                 <ul class="footer-info-list categories">
@@ -102,22 +116,45 @@
               <article class="footer-info-col footer-info-col--small-4" data-section-type="footer-webPages">
                 <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
                   {{> components/common/social-links}}
-                  {{#if settings.phone_number}}
-                    <!-- <li class="navPages-item navPages-item-page pages phone-number"> -->
-                      <a class="navPages-action phone-number">{{settings.phone_number}}</a>
-                    <!-- </li> -->
-                  {{/if}}
+                  <ul class="footer-info-list">
+                    {{#if (getVar "email")}}
+                      <li>
+                        <label for="footer_email" class="footer_label footer-email">Email:</label>
+                        <a class="navPages-action email" id="footer_email">{{getVar "email"}}</a>
+                      </li>
+                    {{/if}}
+                    {{#if settings.phone_number}}
+                      <li class="navPages-item navPages-item-page pages phone-number">
+                        <label class="phone-number-label footer_label" for="phone_
+                        number">Phone:</label>
+                        <a class="navPages-action phone-number" id="phone_number">{{settings.phone_number}}</a>
+                      </li>
+                    {{/if}}
+                    {{#if (getVar "Po_Box")}}
+                      <li>
+                        <label for="Po_Box" class="footer_label footer-po-box">Po_Box:</label>
+                        <a class="navPages-action po-box" id="Po_Box">{{getVar "Po_Box"}}</a>
+                      </li>
+                    {{/if}}
+
+                  </ul>
+                  
+                  
+                  
                   {{{region name="ssl_site_seal--global"}}}
               </article>
             {{/if}}
+            <hr class="border"/>
+        </section>
+    </div>
+    <div class="payment-icons-section">
+      <!-- <hr class="border"/> -->
+      {{!> components/common/payment-icons}}
     </div>
 
-    <div class="payment-icons-section">
-      <hr class="border"/>
-      {{> components/common/payment-icons}}
-    </div>
 
     <div class="footer-bottom">
+      {{!--
       {{#if settings.address}}
       <article class="store-info" data-section-type="storeInfo">
           <address>{{settings.address}}</address>
@@ -137,7 +174,7 @@
           <p class="powered-by created-by text">Created by <a href="https://lonestartemplates.com/" rel="nofollow">Lone Star Templates</a></p>
         </div>
       {{/if}}
-
+      --}}
       {{#if theme_settings.show_copyright_footer}}
         <div class="footer-copyright">
             <p class="powered-by text">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>

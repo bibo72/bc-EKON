@@ -445,11 +445,11 @@ blog:
     <!-- END UPPER FEATURED CUSTOM BANNERS -->
 
 
-  <!-- TOP SELLERS SECTION -->
-    {{#if products.top_sellers}}
-        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+    <!-- NEW PRODUCTS SECTION -->
+    {{#if products.new}}
+        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
     {{/if}}
-    {{{region name="home_below_top_products"}}}
+    {{{region name="home_below_new_products"}}}
 
 
     <!-- BEGIN LOWER FEATURED BANNERS -->
@@ -657,12 +657,12 @@ blog:
     <!-- END 2 COLUMN FEATURED BANNERS -->
     <!-- END LOWER FEATURED CUSTOM BANNERS -->
 
-
-  <!-- NEW PRODUCTS SECTION -->
-    {{#if products.new}}
-        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+    <!-- TOP SELLERS SECTION -->
+    {{#if products.top_sellers}}
+    {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
     {{/if}}
-    {{{region name="home_below_new_products"}}}
+    {{{region name="home_below_top_products"}}}
+
   <!-- END NEW PRODUCTS SECTION -->
 </div>
 {{/partial}}

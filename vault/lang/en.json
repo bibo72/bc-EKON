@@ -3,10 +3,10 @@
         "welcome_back": "Welcome back, {name}"
     },
     "footer": {
-        "brands": "Popular Brands",
+        "brands": "INDUSTRIES WE SERVE",
         "navigate": "Navigate",
         "info": "Info",
-        "categories": "Categories",
+        "categories": "Top Categories",
         "call_us": "Call us at {phone_number}"
     },
     "home": {
@@ -682,11 +682,11 @@
         "max_purchase_quantity": "Maximum Purchase:",
         "min_purchase_quantity": "Minimum Purchase:",
         "related_products": "Related Products",
-        "top": "Most Popular",
+        "top": "POPULAR PRODUCTS",
         "similar_by_views": "Customers Also Viewed",
         "featured": "Featured Products",
         "file_option_set": "Currently: <a href=\"{url}\" target=\"_blank\">{name}</a>",
-        "new": "New Products",
+        "new": "COLD BAGS",
         "warranty": "Warranty Information",
         "reviews": {
             "hide": "Hide Reviews",
@@ -791,7 +791,7 @@
         "subscribe": "Join our newsletter",
         "subscribe_intro": "Get the latest updates on new products and upcoming sales!",
         "subscribe_submit": "Subscribe",
-        "email_placeholder": "email address",
+        "email_placeholder": "Email address",
         "subscribed_heading": "Thanks for Subscribing!",
         "subscribed_heading_error": "Oops...",
         "subscribed_message": "Thank you for joining our mailing list. You'll be sent the next issue of our newsletter shortly",
@@ -799,7 +799,7 @@
         "unsubscribed_message": "You will no longer receive marketing emails from <b>{store_name}</b>"
     },
     "social": {
-        "connect": "Connect With Us"
+        "connect": "Connect Us"
     },
     "errors": {
         "shipping_quote_failure": "There was a problem retrieving your shipping quote",
