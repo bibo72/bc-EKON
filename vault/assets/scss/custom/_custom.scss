@@ -5,6 +5,13 @@ hr.border{
 .mega-cat-dropdown::-webkit-scrollbar-thumb{
     background:#cdcccc !important ;
 }
+.price_unit{
+    text-transform: uppercase;
+    color: #70706E;
+    font-size: 13px;
+    font-style: italic;
+
+}
 //  header
 header .navUser ul.navUser-section.navUser-section--alt {
     padding-top: 0;
@@ -323,6 +330,12 @@ article.card {
                 /*  autoprefixer: on  */
                 .price-section{
                     height: 18px;
+                }
+                >div{
+                    display: inline-block;
+                }
+                .price--rrp, .price--non-sale, .price--discounted{
+                    color:#70706E ;
                 }
     
             }
