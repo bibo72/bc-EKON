@@ -12,6 +12,7 @@ hr.border{
     font-style: italic;
 
 }
+
 //  header
 header .navUser ul.navUser-section.navUser-section--alt {
     padding-top: 0;
@@ -124,8 +125,16 @@ div#menu .mega-cat-dropdown .mega-content  {
             }
             
         }
+    }    
+}
+div#menu .mega-cat-nav {
+    li.navPages-item{
+        .mega-menu-icon,.burger-menu{
+            fill: #fff;
+            color: #fff;
+            stroke: #fff;
+        }
     }
-         
 }
 
 .nav-middle{
@@ -322,8 +331,8 @@ article.card {
                 font-size:15px;
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
-                -webkit-line-clamp: 3; // 3 行
-                height: 54px; // 3行的高度
+                -webkit-line-clamp: 2; // 2 行
+                height: 36px; // 2行的高度
                 overflow: hidden;
                 /* autoprefixer: off  */
                 -webkit-box-orient: vertical;
@@ -374,6 +383,7 @@ div.newsletter-subscription-section{
         }
         .footer-newsletter-summary{
             font-size: 16px;
+            font-weight: bold;
         }
     }
     .form{
@@ -432,4 +442,110 @@ footer.footer{
 }
 div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     width: 100% !important;
+}
+
+//breadcrumb 
+.breadcrumb {
+    &:before,&>.breadcrumb-label{
+        color: #151515 !important;
+        text-transform: none;
+        font-size: 15px;
+    }
+}
+.breadcrumb.is-active{
+    & > .breadcrumb-label{
+        font-weight: bolder;
+    }
+}
+
+//--------------PLP-----------------------
+.page{
+    //left nav Level 1 Title AND right level 1 Title
+    .sidebarBlock-heading,.accordion-title,.toggleLink,.page-heading{
+        font-size: 18px;
+        color: #133579;
+        font-weight: bold;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        border: none;
+        @include breakpoint("medium") {
+            font-size: 22px;
+            padding-left: 0;
+        }
+        .accordion-indicator{
+            fill: #133579;
+            position: relative;
+            top: -2px;
+        }
+    }
+//left nav
+    .page-sidebar#faceted-search-container{
+        //left nav Level 2 Title
+        >nav>.sidebarBlock>ul>li>a{
+            color: #133579;
+            font-weight: bold;
+            margin-bottom: 0;
+            font-size: 16px;
+            text-decoration: underline;
+        }
+        //left nav content
+        .sidebarBlock ul.navList{
+            margin-bottom: 5px;
+        }
+        p,a[data-faceted-search-facet][rel="nofollow"]{
+            font-size: 15px;
+            text-decoration: none;
+            font-weight: normal;
+            color: #151515;
+        }
+        .facetLabel[data-faceted-search-facet]{
+            border: none;
+            font-size: 15px;
+            svg.icon{
+                fill: #151515;
+            }
+        }
+        a[data-faceted-search-facet][rel="nofollow"]{
+            &:before{
+                width: 12px;
+                height: 12px;
+                top: 53%;
+            }
+            &:after{
+                transform: scale(0.9);
+                left: -1px;
+                top: 47%;
+            }
+        }
+    }
+    
+//right content
+    .page-content{
+        .page-heading{
+            font-size: 40px;
+        }
+        ul.navList{
+            display: none;
+        }
+
+        form[data-sort-by]{
+            .actionBar-section .form-field{
+                border-color: #7d7d7d;
+                padding-right: 10px;
+                .form-label,select.form-select{
+                    font-size: 15px;
+                }
+                .form-label{
+                    color: #58595b;
+                }
+                select.form-select{
+                    height: max-content;
+                    font-weight: bold;
+                    padding-top: 11px;
+                    padding-bottom:11px;
+                }
+            }
+        }
+
+    }
 }
