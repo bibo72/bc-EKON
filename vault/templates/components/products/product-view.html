@@ -10,12 +10,26 @@
 
     <section class="productView-details">
         <div class="productView-product">
+            {{#if product.stock_level}}
+            <p class="card-text has-stock" data-test-info-type="stock">In Stock</p>
+        {{else}}
+            <p class="card-text no-stock" data-test-info-type="stock">Usually ships in 1-3 weeks</p>
+        {{/if}}
             <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
+            {{#if product.sku}}
+            <div class="line-item-details sku">
+              <dt class="productView-info-name">{{lang 'products.sku'}}</dt>
+              <dd class="productView-info-value" data-product-sku>{{product.sku}}</dd>
+            </div>
+          {{/if}}
+            {{!--
             {{#if product.brand}}
                 <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
                     <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
                 </h2>
             {{/if}}
+            --}}
+
             <div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
                 {{#if settings.show_product_rating}}
                     {{#if product.num_reviews '>' 0}}
@@ -46,27 +60,18 @@
                     {{> components/products/modals/writeReview}}
                 {{/if}}
             </div>
-            {{#if product.call_for_price}}
-                <p class="productView-price">
-                    <span>{{product.call_for_price}}</span>
-                </p>
-            {{/if}}
+
             <div class="productView-price">
                 {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
-                    {{> components/products/price price=product.price schema_org=schema}}
+                    {{> components/products/price price=product.price schema_org=schema custom_fields=product.custom_fields}}
                 {{else}}
                     {{> components/common/login-for-pricing}}
                 {{/or}}
             </div>
             {{{region name="product_below_price"}}}
             {{product.detail_messages}}
+            
             <dl class="productView-info">
-                {{#if product.sku}}
-                  <div class="line-item-details sku">
-                    <dt class="productView-info-name">{{lang 'products.sku'}}</dt>
-                    <dd class="productView-info-value" data-product-sku>{{product.sku}}</dd>
-                  </div>
-                {{/if}}
                 {{#if product.upc}}
                 <div class="line-item-details upc">
                     <dt class="productView-info-name">{{lang 'products.upc'}}</dt>
@@ -172,12 +177,15 @@
                {{/if}}
 
                 {{#each product.custom_fields}}
-                <div class="line-item-details custom-fields">
-                    <dt class="productView-info-name">{{name}}:</dt>
-                    <dd class="productView-info-value">{{{value}}}</dd>
-                </div>
+                    {{#if name "!=" "price_unit"}}
+                        <div class="line-item-details custom-fields">
+                            <dt class="productView-info-name">{{name}}:</dt>
+                            <dd class="productView-info-value">{{{value}}}</dd>
+                        </div>
+                    {{/if}}
                 {{/each}}
             </dl>
+            
         </div>
     </section>
 
@@ -256,12 +264,14 @@
                         {{{dynamicComponent 'components/products/options'}}}
                     {{/each}}
                 </div>
+                {{!--
                 <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
                     <label class="form-label form-label--alternate">
                         {{lang 'products.current_stock'}}
                         <span data-product-stock>{{product.stock_level}}</span>
                     </label>
                 </div>
+                --}}
                 {{#if product.can_purchase}}
                     {{> components/products/add-to-cart}}
                 {{/if}}
