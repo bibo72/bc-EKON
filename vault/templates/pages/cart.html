@@ -26,7 +26,10 @@ cart: true
 
             {{#if cart.show_primary_checkout_button}}
                 <div class="cart-actions">
-                    <a class="button button--primary" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">{{lang 'cart.checkout.button'}}</a>
+                    
+                    <a class="button button--primary" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">
+                        <svg><use xlink:href="#icon-lock-icon" /></svg>
+                        {{lang 'cart.checkout.button'}}</a>
                     {{#if cart.show_multiple_address_shipping}}
                         <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
                             {{lang 'cart.preview.checkout_multiple'}}
@@ -35,6 +38,7 @@ cart: true
                 </div>
             {{else}}
                 <div class="cart-actions">
+                    <svg><use xlink:href="#icon-lock-icon" /></svg>
                     <a class="button" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
                 </div>
             {{/if}}

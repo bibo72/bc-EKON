@@ -670,3 +670,138 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 
     }
 }
+
+
+// -----------------CART-------------------
+.page-content[data-cart]{
+    .page-heading[data-cart-page-title]{
+        .label_num{
+            font-size: 15px;
+            font-family: "Lato";
+            font-weight:normal;
+            color: #58595B;
+            text-transform:capitalize;
+        }
+    }
+    .cart-header tr th{
+        padding-bottom: 8px;
+        text-align: left;
+    }
+    .cart-list tr td{
+        text-align: left;
+        .cart-remove{
+            width: 25px;
+            height: 25px;
+            background-color: #E5E6E8;
+            svg{
+                width: 15px;
+                height: 15px;
+                fill: #000000;
+                top: 2px;
+                position: relative;
+            }
+        }
+        &.cart-item-block.cart-item-title{
+            @media (min-width:800px){
+                padding: 2.5rem;
+            }
+        }
+        &.cart-item-info{
+            .cart-item-value {
+                
+                font-size: 18px;
+                font-family: "Libre Franklin";
+                font-weight: bold;
+                
+            }
+            @media (max-width:768px) {
+                width: 100%;
+            }
+        }
+        &.cart-item-quantity{
+            .form-increment{
+                input{
+                    height: 36px;
+                }
+            }
+            @media (min-width:800px) and (max-width:867px){
+                width: 20%;
+            }
+
+        }
+    }
+    .card-text[data-test-info-type="stock"]{
+        font-size: 16px;
+        font-family: "Libre Franklin";
+    }
+    .cart-item-name{
+        .cart-item-name__label{
+            font-size: 18px;
+            color: #151515;
+            text-decoration: none;
+        } 
+    }
+    .cart-item-sku,.definitionList .definitionList-value,.definitionList .definitionList-key{
+        margin-bottom: 0;
+        color: #58595B;
+        font-size: 13px;
+    }
+    [data-item-edit]{
+        color: #133579;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    [data-cart-totals] ul.cart-totals{
+        li.cart-total{
+            .cart-total-label{
+                font-family: "Libre Franklin";
+                text-transform: uppercase;
+            }
+        }
+        .coupon-code-add, .coupon-code-cancel, .shipping-estimate-show, .shipping-estimate-hide, .gift-certificate-add, .gift-certificate-cancel{
+            color: #133579;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 16px;
+        }
+        li.price-total{
+            .cart-total-label,.cart-total-value.cart-total-grandTotal{
+                font-size: 20px;
+                font-family: "Libre Franklin";
+                font-weight: bold;
+            }
+        }
+    }
+    .cart-actions{
+        @include u-listBullets("none");
+        width: 100%;
+    
+        @include breakpoint("small") {
+            float: right;
+            width: grid-calc(9, $total-columns);
+        }
+    
+        @include breakpoint("medium") {
+            margin-bottom: spacing("base");
+            width: grid-calc(7, $total-columns);
+        }
+    
+        @include breakpoint("large") {
+            width: grid-calc(5, $total-columns);
+        
+        }
+        svg{
+            width: 13px;
+            height: 17px;
+            position: relative;
+            top: 1px;
+            margin-right: 5px;
+        }
+        a.button{
+            width: 100%;
+            font-size: 17px;
+        }
+
+    }
+}

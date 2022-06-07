@@ -41,7 +41,7 @@
                 "multiple": "check out with multiple addresses",
                 "or": "or"
             },
-            "button": "Check out",
+            "button": "Checkout",
             "empty_cart": "Your cart is empty",
             "title": "Click here to proceed to checkout",
             "item": "Item",
@@ -63,7 +63,8 @@
             "checkout_multiple": "or check out with multiple addresses",
             "view_cart": "View Cart"
         },
-        "label": "Your Cart ({quantity, plural, one {# item} other {# items}})",
+        "label": "Cart",
+        "label_num":"({quantity, plural, one {# item} other {# items}})",
         "is_empty": "Your cart is empty",
         "coupon_code": "Coupon Code",
         "discount": "Discount",
@@ -77,7 +78,7 @@
             "empty_error": "Please enter your coupon code.",
             "cancel": "Cancel",
             "add_code": "Add code",
-            "add_coupon": "Add Coupon",
+            "add_coupon": "+ Add Coupon",
             "button": "Apply",
             "coupon_code": "Enter your coupon code",
             "code_label": "Coupon ({code})",
@@ -92,7 +93,7 @@
             "remove": "Remove"
         },
         "shipping_estimator": {
-            "add_info": "Add Info",
+            "add_info": "+ Add Information",
             "cancel": "Cancel",
             "select_a_country": "Country",
             "select_a_state": "State/province",

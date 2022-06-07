@@ -441,7 +441,7 @@
         "default_image_gift_certificate": "/assets/img/GiftCertificate.png",
         "body-font": "Lato",
         "headings-font": "Libre Franklin",
-        "fontSize-root": 14,
+        "fontSize-root": 15,
         "fontSize-h1": 28,
         "fontSize-h2": 24,
         "fontSize-h3": 22,

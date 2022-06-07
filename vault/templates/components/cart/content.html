@@ -29,14 +29,25 @@
                     {{/if}}
                 </td>
                 <td class="cart-item-block cart-item-title">
+                    {{!--
                     {{#if brand.name}}
                         <p class="cart-item-brand">{{brand.name}}</p>
+                    {{/if}}
+                    --}}
+                    {{#if custom_fields}}
+                    <p class="card-text has-stock" data-test-info-type="stock">In Stock</p>
+                    {{else}}
+                    <p class="card-text no-stock" data-test-info-type="stock">Usually ships in 1-3 weeks</p>
                     {{/if}}
                     <h2 class="cart-item-name">
                         <a class="cart-item-name__label" href="{{url}}">{{name}}</a>
                     </h2>
                     {{#if release_date}}
                         <p>({{release_date}})</p>
+                    {{/if}}
+
+                    {{#if sku}}
+                    <p class="cart-item-sku">SKU: {{sku}}</p>
                     {{/if}}
 
                     {{#if options}}
