@@ -399,3 +399,127 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
 .modal-footer .button {
   background-color: stencilColor("color-primary");
 }
+
+//----------custom checkout--------------
+.layout-cart .optimizedCheckout-orderSummary{
+    padding: 30px 25px;
+}
+
+.stepHeader-counter--complete{
+    transform: scale(1);
+}
+.button--tiny[data-test="step-edit-button"]{
+    padding: 12px 32px;
+    font-size: 0px;
+    &::before{
+        content: "SIGN OUT";
+        font-size: 14px;
+        font-weight: bold;
+        font-family: "Libre Franklin";
+    }
+}
+.checkout-step--customer{
+    .stepHeader{
+       justify-content: space-between; 
+       align-items: center;
+    }
+    
+    [data-test="step-info"]{
+        width: 40%;
+    }
+}
+.optimizedCheckout-headingPrimary{
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.optimizedCheckout-headingSecondary{
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.optimizedCheckout-form-textColor,.optimizedCheckout-form-label{
+    font-size: 15px;   
+}
+a.cart-header-link[data-test="cart-edit-link"]{
+    text-decoration: underline;
+}
+h3.optimizedCheckout-contentPrimary{
+    font-weight: bold;
+    font-size: 15px;
+    color: #58595B;
+    border-bottom: 1px #E6E6E6 solid;
+}
+.optimizedCheckout-orderSummary-cartSection{
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    border-bottom: 1px #E6E6E6 solid;;
+}
+.layout-cart .optimizedCheckout-orderSummary>.cart-header{
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+.optimizedCheckout-orderSummary-cartSection:last-child{
+    border: none;
+}
+h5.optimizedCheckout-contentPrimary{
+    font-size: 15px;
+    font-weight: bold;
+}
+[data-test="cart-item"] {
+    display: grid;
+    grid-template-columns: 25% 75% ;
+    .product-figure{
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 100%;
+    }
+    .product-column.product-body,.product-column.product-actions{
+        width: 100%;
+        text-align: left;
+    }
+    .product-actions .optimizedCheckout-contentPrimary[data-test="cart-item-product-price"]{
+        font-weight: bold;
+        font-family: "Libre Franklin";
+        font-size: 15px;
+    }
+    .product-options{
+        font-size: 13px;
+    }
+    [data-test="cart-subtotal"]{
+        .cart-priceItem-label [data-test="cart-price-label"]{
+            font-size: 15px;
+            font-weight: bold;
+        }
+    }
+}
+.optimizedCheckout-orderSummary-cartSection{
+    a,span{
+        font-size: 15px;
+    }
+    [data-test="cart-price-label"]{
+        font-weight: bold;
+    }
+    button{
+        font-weight: bold;
+    }
+    .redeemable-label{
+        font-size: 0;
+        &::before{
+            content: "+ Add Coupon";
+            font-size: 16px;
+            text-decoration: underline;
+        }
+    }
+    [data-test="cart-total"]{
+        span[data-test="cart-price-label"],span[data-test="cart-price-value"]{
+            font-size: 20px;
+            text-transform: uppercase;
+            font-family: "Libre Franklin";
+        }
+    }
+}
+
+
+
+
