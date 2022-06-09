@@ -1,6 +1,7 @@
 {{{region name="footer_above_full_width--global"}}}
 {{#if in_development}}
-  {{assignVar "Po_Box" "PO Box 1266, Gallatin TN, 37066"}} 
+
+  {{assignVar "Po_Box" "PO Box 1266,</br> Gallatin TN, 37066"}} 
   {{assignVar "email" "orders@ekonopac.com"}} 
 {{/if}}
 
@@ -133,7 +134,8 @@
                     {{#if (getVar "Po_Box")}}
                       <li>
                         <label for="Po_Box" class="footer_label footer-po-box">Po_Box:</label>
-                        <a class="navPages-action po-box" id="Po_Box">{{getVar "Po_Box"}}</a>
+                        <a class="navPages-action po-box" id="Po_Box">{{{getVar "Po_Box"}}}
+                        </a>
                       </li>
                     {{/if}}
 

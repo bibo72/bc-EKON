@@ -4,7 +4,7 @@
       {{#if customer}}
       <!-- <a class="navUser-action with-logout" href="{{urls.account.index}}"><svg><use xlink:href="#icon-profile" /></svg></a> -->
       <!-- <a class="navUser-action logout" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a> -->
-      <a class="navUser-action account signout-list"  title="User Toolbox" alt="User Toolbox" href=""><svg class="header-icon account-icon"><use xlink:href="#icon-account"></use></svg></a>
+      <a class="navUser-action account signout-list"  title="User Toolbox" alt="User Toolbox" href=""><svg class="header-icon account-icon"><use xlink:href="#icon-signin-icon"></use></svg></a>
       <div class="dropdown-menu signout-list" id="account-dropdown-signout-list">
         <!-- <h2 class="container-header">Account Info</h2> -->
           {{> components/common/account-dropdown-signout}}
@@ -13,7 +13,7 @@
         <!-- { {> components / common / currency-selector-dropdown } } -->
       </div>
       {{else}}
-        <a class="navUser-action account signin-list" title="User Toolbox" alt="User Toolbox" href="{{urls.auth.login}}"><svg class="header-icon account-icon"><use xlink:href="#icon-account"></use></svg></a>
+        <a class="navUser-action account signin-list" title="User Toolbox" alt="User Toolbox" href="{{urls.auth.login}}"><svg class="header-icon account-icon"><use xlink:href="#icon-signin-icon"></use></svg></a>
         <!-- <a class="navUser-action login" href="{{urls.auth.login}}">{{lang 'common.login'}}</a> -->
         <div class="dropdown-menu signin-list" id="account-dropdown-signin-list">
           <!-- <h2 class="container-header">Account Info</h2> -->

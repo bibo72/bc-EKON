@@ -22,7 +22,10 @@ hr.border{
 .modal-background{
     z-index: 1004;
 }
-
+//banners
+.banners[data-banner-location="top"]{
+    padding: 0;
+}
 //  header
 header .navUser ul.navUser-section.navUser-section--alt {
     padding-top: 0;
@@ -234,6 +237,7 @@ div#menu .mega-cat-nav {
         .zoom-image-container{
             position: relative;   
             min-height: 150px;  
+            border: none;
             a img{
                 min-height: 150px;
             }       
@@ -274,8 +278,9 @@ div#menu .mega-cat-nav {
                 margin-bottom: 15px;
                 &.featured-banner-byline-text  {
                     font-size: 18px;
-                    font-weight: bold;
+                    font-weight: 800;
                     text-transform: uppercase;
+                    font-family: "Libre Franklin";
                 }
             }
         }
@@ -302,16 +307,22 @@ div#menu .mega-cat-nav {
     }
 }
 
+h2.page-heading.showcase-products{
+    font-size: 25px;
+    color: #133579;
+}
+
 
 
 //    card
 .slick-list {
     margin-left: -1px;
 }
-
-.productCarousel-slide.slick-slide {
-    .card-img-container {}
+.productCarousel-slide{
+    padding-left: 15px;
+    padding-right: 15px;
 }
+
 
 article.card {
     border: 1px #D7D7D7 solid;
@@ -444,6 +455,10 @@ footer.footer{
             }
         }
     }
+    li,li a{
+        text-transform: none;
+        font-size: 15px;
+    } 
 
 }
 div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
@@ -614,6 +629,10 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
                 font-size: 15px;
                 color: #58595B;
                 font-weight: normal;
+                width: auto;
+            }
+            .productView-info-name,.productView-info-value{
+                float: none;
             }
         }
         //product price
@@ -652,6 +671,29 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
                 top: 5px;
             }
         }
+        //price-bulk-pricing
+        .price-bulk-pricing{
+            padding: 30px;
+            background: #F4F4F4;
+            h4{
+                margin: 0;
+                font-size: 22px;
+                color: #133579;
+                text-transform: uppercase;
+            }
+            table{
+                margin-top: 10px;
+                width: 100%;
+                tr th{
+                    width: 25%;
+                    text-align: left;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid #D0CCCC;
+                }
+            }
+        }
+        
     }
 }
 //product description
@@ -670,6 +712,7 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 
     }
 }
+
 
 
 // -----------------CART-------------------

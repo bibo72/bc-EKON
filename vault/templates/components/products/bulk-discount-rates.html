@@ -1,6 +1,6 @@
 {{#if bulk_discount_rates.length}}
     {{#if product}}<dt class="productView-info-name">{{lang 'products.bulk_pricing.title'}}</dt>{{/if}}
-    {{!--
+    
     <dd class="productView-info-value">
         <a href="{{product.url}}#bulk_pricing"
            {{#unless is_ajax }}data-reveal-id="modal-bulk-pricing"{{/unless}}>
@@ -34,15 +34,14 @@
             </ul>
         </div>
     </div>
-    --}}
+    
 
     <div class="price-bulk-pricing">
-        <h3>price breaks</h3>
+        <h4>price breaks</h4>
         <table>
             <tr>
                 <th>Quantity</th>
                 <th>Total Pieces</th>
-                <th>Discount ( $ )</th>
                 <th>Discount ( $ )</th>
                 <th>Total</th>
             </tr>
