@@ -1,6 +1,8 @@
+
 {{#if bulk_discount_rates.length}}
+    {{!--
     {{#if product}}<dt class="productView-info-name">{{lang 'products.bulk_pricing.title'}}</dt>{{/if}}
-    
+   
     <dd class="productView-info-value">
         <a href="{{product.url}}#bulk_pricing"
            {{#unless is_ajax }}data-reveal-id="modal-bulk-pricing"{{/unless}}>
@@ -8,7 +10,7 @@
         </a>
     </dd>
 
-    
+ 
     <div id="modal-bulk-pricing" class="modal modal--small" data-reveal>
         <div class="modal-header">
             <h2 class="modal-header-title">{{lang 'products.bulk_pricing.modal_title'}}</h2>
@@ -34,17 +36,36 @@
             </ul>
         </div>
     </div>
-    
+    --}}
 
     <div class="price-bulk-pricing">
         <h4>price breaks</h4>
         <table>
-            <tr>
+            <tr class="table-title">
                 <th>Quantity</th>
                 <th>Total Pieces</th>
                 <th>Discount ( $ )</th>
                 <th>Total</th>
             </tr>
+            {{assignVar "price" price.without_tax.value}}
+            {{#each bulk_discount_rates}}
+                <tr class="table-content">
+                    <td>{{min}} Case</td>
+                    {{assignVar "totalNum" (multiply (toInt min) (getVar "price"))}}
+                    <td>{{money (getVar "totalNum") 2 "," "."}}</td>
+
+                    {{#if type "==" "fixed"}}
+                        <td>-{{money (subtract (getVar "price") discount.value) 2 "," "."}}</td>
+                        <td>{{money (multiply (toInt min) discount.value) 2 "," "."}}</td>
+                    {{else if type "==" "price"}}
+                        <td>-{{money (subtract (getVar "price") discount.value) 2 "," "."}}</td>
+                        <td>{{money (multiply (toInt min) discount.value) 2 "," "."}}</td>
+                    {{else if type "==" "percent"}}
+                        <td>-{{discount.formatted}}</td>
+                        <td>{{subtract (getVar "totalNum") (multiply (toFloat (divide discount.value 100)) (getVar "totalNum")) }}</td>
+                    {{/if}}
+                </tr>
+            {{/each}}
         </table>
     </div>
 

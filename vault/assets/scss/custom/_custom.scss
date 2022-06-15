@@ -20,8 +20,8 @@ hr.border{
     }
 }
 .modal-background{
-    z-index: 1004;
-}
+    z-index: 100004;
+} 
 //banners
 .banners[data-banner-location="top"]{
     padding: 0;
@@ -673,23 +673,36 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
         }
         //price-bulk-pricing
         .price-bulk-pricing{
-            padding: 30px;
+            // padding: 30px;
             background: #F4F4F4;
             h4{
-                margin: 0;
+                padding: 30px 30px 0 30px;
                 font-size: 22px;
                 color: #133579;
                 text-transform: uppercase;
             }
             table{
                 margin-top: 10px;
-                width: 100%;
+                width: calc(100% - 60px );
+                margin-left: 30px;
+
                 tr th{
                     width: 25%;
                     text-align: left;
                     padding-top: 5px;
                     padding-bottom: 5px;
                     border-bottom: 1px solid #D0CCCC;
+                }
+                tr th:first-child,tr td:first-child{
+                    // padding-left: 30px;
+                }
+                tr td{
+                    padding: 10px 0;
+                    cursor: default;
+                }
+                tr.table-content:hover{
+                    background-color: #133579;
+                    color: #fff;
                 }
             }
         }
@@ -850,4 +863,94 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 }
 
 //---------------CHECKOUT--------------------
+
+//---------------Login-----------------
+#modal-login-form{
+    z-index: 10000000004;
+    .modal-body{
+        padding: 50px 35px;
+        div.login,div.login-row{
+            margin: 0;
+        }
+    }
+}
+.login{
+    h1.page-heading{
+        color: #133579;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        @include breakpoint("medium") {
+            font-size: 30px;
+        }
+    }
+    h2.form-title,h2.panel-title{
+        margin: 0;
+        margin-bottom: 20px;
+        padding-bottom: 7px;
+        color: #133579;
+        font-size: 18px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #E6E6E6;
+    }
+    .login-row{
+        margin: 0;
+        .login-form{
+            padding:0;
+            margin-top: 0;
+            @include breakpoint("medium") {padding-right: 15px;}
+            .form-field{
+                margin-bottom: 25px;
+            }
+            .form-label{
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .form-input{
+                height: 40px;
+            }
+            .form-actions{
+                margin-top: -15px;
+                > *{
+                    display: block;
+                    text-align: left;
+                }
+                >a{
+                    margin-bottom: 30px;
+                    font-size: 16px;
+                    color: #133759;
+                    font-weight: bold;
+    
+                }
+                input[type="submit"]{
+                    margin-left: 0;
+                    font-size: 14px;
+                    font-family: "Libre Franklin";
+                    padding: 12px 32px;
+                }
+            } 
+    
+        }
+        .new-customer{
+            padding: 0;
+            @include breakpoint("medium") { padding-left: 15px;}
+            .panel>div{
+                padding: 0;
+                background-color:transparent;
+            }
+            .panel-label{
+                margin: 0;
+                font-weight: bold;
+            }
+            .panel-content{
+                margin-bottom: 20px;
+            }
+            a button{
+                font-size: 14px;
+                font-family: "Libre Franklin";
+                padding: 12px 32px;
+            }
+        }
+    }
+}
+
 

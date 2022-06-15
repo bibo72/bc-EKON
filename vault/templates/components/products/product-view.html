@@ -172,7 +172,7 @@
 
                 {{#if settings.bulk_discount_enabled}}
                    <div class="productView-info-bulkPricing">
-                       {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates}}
+                       {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates price=product.price}}
                    </div>
                {{/if}}
 
