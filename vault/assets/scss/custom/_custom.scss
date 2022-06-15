@@ -22,6 +22,16 @@ hr.border{
 .modal-background{
     z-index: 100004;
 } 
+div.sale-flag-side{
+    font-size: 12px;
+    .sale-text{
+        transform: scale(0.83);
+        transform-origin: left;
+        display: inline-block;
+    }
+    
+}
+
 //banners
 .banners[data-banner-location="top"]{
     padding: 0;
@@ -342,6 +352,14 @@ article.card {
             line-height:1.5rem;
             &[data-test-info-type="stock"]{
                 font-size: 13px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2; // 2 行
+                height: 36px; // 2行的高度
+                overflow: hidden;
+                /* autoprefixer: off  */
+                -webkit-box-orient: vertical;
+                /*  autoprefixer: on  */
             }
            
             &[data-test-info-type="price"] {

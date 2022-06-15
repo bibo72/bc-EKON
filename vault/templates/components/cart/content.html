@@ -94,6 +94,13 @@
                     {{else}}
                         {{> components/common/login-for-pricing}}
                     {{/or}}
+                    {{#each custom_fields}}
+                    {{#if name "===" "price_unit"}}
+                        <span class="price_unit">
+                            {{value}}
+                        </span>
+                    {{/if}}
+                {{/each}}
                 </td>
 
                 <td class="cart-item-block cart-item-info cart-item-quantity">
