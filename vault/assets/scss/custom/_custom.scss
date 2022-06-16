@@ -783,6 +783,19 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     }
 
 }
+.related-product-section{
+    [role="tablist"] [role="presentational"]{
+        .tab-title{
+           color: #133579; 
+           font-size: 22px;
+           font-family: "Libre Franklin";
+        }
+        &.is-active{
+            border-color: #E86826;
+        }
+        
+    }
+}
 //product description
 .productView-description{
     padding: 0;
