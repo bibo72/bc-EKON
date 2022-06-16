@@ -1,14 +1,14 @@
 <div id="accordion">
   {{#if product.description}}
   {{#if theme_settings.show_product_overview_tab '===' true}}
-    <h3 class="product-description"><span class="tab-title">Product Overview</span> <svg class="accordion-icon arrow down"><use xlink:href="#icon-v-down"></use></svg></h3>
-      <div class="" id="">
+      <h3 class="product-description"><span class="tab-title">Product Overview</span> <svg class="accordion-icon arrow down"><use xlink:href="#icon-v-down"></use></svg></h3>
+      <div class="product-description-content" id="">
         {{{product.description}}}
         {{{snippet 'product_description'}}}
       </div>
-  {{/if}}
-  {{/if}}
 
+  {{/if}}
+  {{/if}}
   {{#if theme_settings.show_product_warranty_tab '===' true}}
   {{#if product.warranty}}
     <h3 class="product-warranty"><span class="tab-title">{{lang 'products.warranty'}}</span> <svg class="accordion-icon arrow down"><use xlink:href="#icon-v-down"></use></svg></h3>

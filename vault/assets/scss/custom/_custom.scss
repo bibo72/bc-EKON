@@ -691,7 +691,7 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
         }
         //price-bulk-pricing
         .price-bulk-pricing{
-            // padding: 30px;
+            padding-bottom: 20px;
             background: #F4F4F4;
             h4{
                 padding: 30px 30px 0 30px;
@@ -726,8 +726,68 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
         }
         
     }
+    form{
+        margin-bottom: 0;
+    }
+    .form-action{
+        input#form-action-addToCart{
+            border-radius: 0;
+        }
+    }
+    form.form.form-wishlist.form-action[data-wishlist-add] {
+        a.button.dropdown-menu-button{
+            border-radius: 0;
+            border: #E86826 2px solid !important;
+            color: #133579;
+            font-size: 17px;
+            font-family: "Libre Franklin";
+            font-weight: bold;
+            &:hover,&.action{
+                color: #E86826 !important;
+                border-color: #133579 !important;
+            }
+            &.is-open{
+                width: 100%;
+            }
+        }
+        ul#wishlist-dropdown{
+            li .button{
+                border-radius: 0;
+                &:hover{
+                    background-color: #133579;
+
+                }
+            }
+        }
+    }
+}
+.productView-contactUs{
+    margin-top: 17px;
+    display: flex;
+    div.contactUs_span{
+        display: inline-block;
+        margin-right: 32px;
+        &:last-child{
+            margin-right: 0;
+        }
+        img{
+            position: relative;
+            top: -2px;
+        }
+        span{
+            font-size: 15px;
+            font-family: "Libre Franklin";
+            font-weight: bold;
+            color: #133579;
+        }
+    }
+
 }
 //product description
+.productView-description{
+    padding: 0;
+    margin-top: 55px;
+}
 .productView-description #accordion{
     h3.ui-accordion-header{
         background: #133579;
@@ -743,6 +803,13 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 
     }
 }
+[data-content-num]{
+    display: none;
+}
+#accordion .ui-accordion-header-active svg.accordion-icon.arrow.down {
+    transform: rotate(180deg);
+}
+
 
 
 

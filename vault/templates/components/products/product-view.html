@@ -28,7 +28,7 @@
                     <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
                 </h2>
             {{/if}}
-            --}}
+            
 
             <div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
                 {{#if settings.show_product_rating}}
@@ -60,7 +60,7 @@
                     {{> components/products/modals/writeReview}}
                 {{/if}}
             </div>
-
+            --}}
             <div class="productView-price">
                 {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
                     {{> components/products/price price=product.price schema_org=schema custom_fields=product.custom_fields}}
@@ -170,11 +170,7 @@
                     {{/if}}
                 {{/if}}
 
-                {{#if settings.bulk_discount_enabled}}
-                   <div class="productView-info-bulkPricing">
-                       {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates price=product.price}}
-                   </div>
-               {{/if}}
+
 
                 {{#each product.custom_fields}}
                     {{#if name "!=" "price_unit"}}
@@ -288,7 +284,26 @@
                 {{> components/common/wishlist-dropdown}}
             {{/if}}
         </div>
-        {{> components/common/share}}
+        {{#if settings.bulk_discount_enabled}}
+        <div class="productView-info-bulkPricing">
+            {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates price=product.price}}
+        </div>
+        {{/if}}
+        <div class="productView-contactUs">
+            <div class="contactUs_span">
+                <img src="../../../assets/img/schedule-demo-icon.png" alt="">
+                <span>SCHEDULE A DEMO</span>
+            </div>
+            <div class="contactUs_span">
+                <img src="../../../assets/img/ask-question-icon.png" alt="">
+                <span>ASK A QUESTION</span>
+            </div>
+            <div class="contactUs_span">
+                <img src="../../../assets/img/request-sample-icon.png" alt="">
+                <span>REQUEST A SAMPLE</span>
+            </div>
+        </div>
+        {{!> components/common/share}}
         {{{snippet 'product_details'}}}
     </section>
 </div>
