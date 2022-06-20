@@ -35,3 +35,157 @@
 {{/partial}}
 
 {{> layout/empty}}
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    document.body.onload = function() {
+        let productsSku,productsData;
+        $.ajax({
+            url: '/api/storefront/carts',
+            type: 'GET',
+            success: (data) => {
+                // console.log(data[0].lineItems.physicalItems);
+                productsSku = data[0].lineItems.physicalItems.map(item=>{
+                    return item.sku
+                });
+            },
+            error: (err) => {
+                console.log(err);
+            },
+            })
+        .then( ()=>{
+                console.log(productsSku);
+                productsData = productsSku.map((item)=>{
+                    return getProductBySku(item);
+                });
+                
+                const editHtml = setInterval(function(){
+                    if($(".productList .productList-item").length){
+                        let customData =  Promise.all(productsData);
+                        customData.then(function(data){
+                            data.map((item,index)=>{
+                                const $liItem = $($(".productList .productList-item")[index]);
+                                $liItem.find("ul.product-options").after(`
+                                    <p class="pro-sku" data-sku="${item.sku}">SKU: ${item.sku}</p>
+                                `);
+                                if(item.customFields.edges.length){
+                                    item.customFields.edges.map(customField=>{
+                                        if(customField.node.name== "price_unit"){
+                                            $liItem.find('[data-test="cart-item-product-price"]').append(`
+                                            <span class="price_unit">
+                                                ${customField.node.value}
+                                            </span>
+                                            `);
+                                        }
+                                        else if(customField.node.name== "in_stock"){
+                                            if(customField.node.value == "true"){
+                                                $liItem.find('[data-test="cart-item-product-title"]').before(`
+                                                    <p class="card-text has-stock" data-test-info-type="stock">In Stock</p>
+                                                `);
+                                            }else{
+                                                $liItem.find('[data-test="cart-item-product-title"]').before(`
+                                                    <p class="card-text no-stock" data-test-info-type="stock">Usually ships in 1-3 weeks</p>
+                                                `); 
+                                            }
+                                        }
+
+                                    })
+                                }
+                            });
+                        });
+                        clearInterval(editHtml);
+                    }
+                },500);
+
+           
+        });
+    }
+    function getProductBySku(sku) {
+        return new Promise((resolve, reject) => {
+            fetch('/graphql', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer {{settings.storefront_api.token}}`,
+                },
+                body: JSON.stringify({
+                    query: `
+                    {
+                        site {
+                            product(
+                                sku: "${sku}"
+                            ) {
+                                id
+                                entityId
+                                sku
+                                name
+                                path
+                                brand {
+                                    name
+                                    entityId
+                                }
+                                customFields(first:50){
+                                    edges{
+                                        node{
+                                            entityId
+                                            name
+                                            value
+                                        }
+                                    }
+                                }
+                                minPurchaseQuantity
+                                maxPurchaseQuantity
+                                defaultImage {
+                                    urlOriginal
+                                }
+                                variants(first: 50) {
+                                    edges {
+                                        node {
+                                            entityId
+                                            sku
+                                            defaultImage {
+                                                urlOriginal
+                                            }
+                                            prices {
+                                                price {
+                                                    value
+                                                }
+                                            }
+                                            options {
+                                                edges {
+                                                    node {
+                                                        entityId
+                                                        displayName
+                                                        values {
+                                                            edges {
+                                                                node {
+                                                                    entityId
+                                                                    label
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    `,
+                }),
+            })
+                .then(results => results.json())
+                .then(data => {
+                    console.log(data.data.site.product);
+                    if (data.data && data.data.site.product) {
+                        resolve(data.data.site.product);
+                    } else {
+                        resolve({});
+                    }
+                }).catch(() => {
+                    resolve({});
+                });
+        });
+            }
+</script>

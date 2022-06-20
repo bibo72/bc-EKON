@@ -40,29 +40,31 @@
 
     <div class="price-bulk-pricing">
         <h4>price breaks</h4>
-        <table>
+        <table class="table_thead">
             <tr class="table-title">
                 <th>Quantity</th>
                 <th>Total Pieces</th>
                 <th>Discount ( $ )</th>
                 <th>Total</th>
             </tr>
+        </table>
+        <table class="table_tbody">
             {{assignVar "price" price.without_tax.value}}
             {{#each bulk_discount_rates}}
                 <tr class="table-content">
-                    <td>{{min}} Case</td>
+                    <td class="content_1">{{min}} Case</td>
                     {{assignVar "totalNum" (multiply (toInt min) (getVar "price"))}}
-                    <td>{{money (getVar "totalNum") 2 "," "."}}</td>
+                    <td class="content_2">{{money (getVar "totalNum") 2 "," "."}}</td>
 
                     {{#if type "==" "fixed"}}
-                        <td>-{{money (subtract (getVar "price") discount.value) 2 "," "."}}</td>
-                        <td>{{money (multiply (toInt min) discount.value) 2 "," "."}}</td>
+                        <td class="content_3">-{{money (subtract (getVar "price") discount.value) 2 "," "."}}</td>
+                        <td class="content_4">{{money (multiply (toInt min) discount.value) 2 "," "."}}</td>
                     {{else if type "==" "price"}}
-                        <td>-{{money (subtract (getVar "price") discount.value) 2 "," "."}}</td>
-                        <td>{{money (multiply (toInt min) discount.value) 2 "," "."}}</td>
+                        <td class="content_3">-{{money (subtract (getVar "price") discount.value) 2 "," "."}}</td>
+                        <td class="content_4">{{money (multiply (toInt min) discount.value) 2 "," "."}}</td>
                     {{else if type "==" "percent"}}
-                        <td>-{{discount.formatted}}</td>
-                        <td>{{subtract (getVar "totalNum") (multiply (toFloat (divide discount.value 100)) (getVar "totalNum")) }}</td>
+                        <td class="content_3">-{{discount.formatted}}</td>
+                        <td class="content_4">{{subtract (getVar "totalNum") (multiply (toFloat (divide discount.value 100)) (getVar "totalNum")) }}</td>
                     {{/if}}
                 </tr>
             {{/each}}

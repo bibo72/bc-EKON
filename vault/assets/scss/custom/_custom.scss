@@ -31,7 +31,9 @@ div.sale-flag-side{
     }
     
 }
-
+ul.breadcrumbs{
+    margin-bottom: 40px;
+}
 //banners
 .banners[data-banner-location="top"]{
     padding: 0;
@@ -351,11 +353,12 @@ article.card {
             font-size:14px;
             line-height:1.5rem;
             &[data-test-info-type="stock"]{
-                font-size: 13px;
+                font-size: 13px !important;
+                line-height: normal !important;
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2; // 2 行
-                height: 36px; // 2行的高度
+                height: 30px; // 2行的高度
                 overflow: hidden;
                 /* autoprefixer: off  */
                 -webkit-box-orient: vertical;
@@ -363,6 +366,7 @@ article.card {
             }
            
             &[data-test-info-type="price"] {
+                font-family: "Libre Franklin";
                 font-size:15px;
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
@@ -390,6 +394,7 @@ article.card {
         }
 
         .card-title{
+            font-size: 15px;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2; // 2 行
@@ -519,6 +524,7 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     }
 //left nav
     .page-sidebar#faceted-search-container{
+        margin-top: 0;
         //left nav Level 2 Title
         >nav>.sidebarBlock>ul>li>a{
             color: #133579;
@@ -560,8 +566,8 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     
 //right content
     .page-content{
-        .page-heading{
-            font-size: 40px;
+        h1.page-heading{
+            font-size: 40px !important;
         }
         ul.navList{
             display: none;
@@ -585,9 +591,55 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
                 }
             }
         }
+        .productGrid li.product{
+            padding-left: 5px;
+            padding-right: 5px;
+            .card{
+                margin-bottom: 10px;
+            }
+        }
+        //pagination
+        .pagination ul.pagination-list{
+            li.pagination-item{
+                border: 1px solid #C7C8CA;
+                
+                a{
+                    color: #151515;
+                    padding: 4px 10px;
+                }
+                &:hover,&.pagination-item--current{
+                    a{
+                       color: #fff; 
+                    }
+                    svg{
+                        fill:#fff;
+                    }
+                    
+                    background-color: #133579;
+                }
+            }
+            li.pagination-item--previous,li.pagination-item--next{
+                width: 28px;
+                height: 25px;
+            }
+            li.pagination-item--next{
+                float: none;
+                >a.pagination-link{
+                  padding: 0 !important;  
+                }
+                
+                svg{
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                }
+
+            }
+        }
 
     }
 }
+
 
 
 //-------------PDP----------------
@@ -656,6 +708,7 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
         //product price
         .productView-price{
             font-size: 28px;
+            font-family: "Libre Franklin";
             >div{
                 display: inline-block;
             }
@@ -699,7 +752,7 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
                 color: #133579;
                 text-transform: uppercase;
             }
-            table{
+            table.table_thead{
                 margin-top: 10px;
                 width: calc(100% - 60px );
                 margin-left: 30px;
@@ -710,10 +763,15 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
                     padding-top: 5px;
                     padding-bottom: 5px;
                     border-bottom: 1px solid #D0CCCC;
+                    &:last-child{
+                        padding-left: 15px;
+                    }
                 }
-                tr th:first-child,tr td:first-child{
-                    // padding-left: 30px;
-                }
+
+            }
+            table.table_tbody{
+                margin: 0;
+                width: 100%;
                 tr td{
                     padding: 10px 0;
                     cursor: default;
@@ -721,6 +779,16 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
                 tr.table-content:hover{
                     background-color: #133579;
                     color: #fff;
+                }
+                tr td{
+                    width: 25%;
+                    &.content_1{
+                        padding-left: 30px;
+                    }
+                    &.content_2{
+                        padding-left: 15px;
+                    }
+
                 }
             }
         }
@@ -769,6 +837,12 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
         margin-right: 32px;
         &:last-child{
             margin-right: 0;
+        }
+        svg{
+            width: 18px;
+            height: 18px;
+            position: relative;
+            top: 3px;
         }
         img{
             position: relative;
@@ -821,6 +895,9 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 }
 #accordion .ui-accordion-header-active svg.accordion-icon.arrow.down {
     transform: rotate(180deg);
+}
+.product .slick-list .slick-track{
+
 }
 
 
@@ -876,6 +953,14 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
             .form-increment{
                 input{
                     height: 36px;
+                }
+                .button{
+                    svg{
+                        width: 20px;
+                        height: 20px;
+                        position: relative;
+                        top: 5px;
+                    }
                 }
             }
             @media (min-width:800px) and (max-width:867px){
@@ -958,6 +1043,8 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
         }
 
     }
+
+
 }
 
 //---------------CHECKOUT--------------------
@@ -1015,15 +1102,15 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
                 >a{
                     margin-bottom: 30px;
                     font-size: 16px;
-                    color: #133759;
                     font-weight: bold;
-    
+                    color: #133759;    
                 }
                 input[type="submit"]{
                     margin-left: 0;
                     font-size: 14px;
                     font-family: "Libre Franklin";
                     padding: 12px 32px;
+                    font-weight: bold;
                 }
             } 
     

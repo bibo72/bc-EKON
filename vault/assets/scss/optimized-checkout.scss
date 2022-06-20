@@ -519,6 +519,39 @@ h5.optimizedCheckout-contentPrimary{
         }
     }
 }
+li.productList-item{
+    .product-body{
+        p{
+            margin-bottom: 0;
+            font-size: 13px;
+            color: #58595B;
+            font-family: "Lato";
+            &.card-text{
+                font-family: "Libre Franklin";
+                color: #D53E07;
+                &.has-stock{
+                    color: #037C11;
+                }
+            }
+        }
+        
+        ul.product-options{display: none;} 
+    }
+    .product-actions{
+        [data-test="cart-item-product-price"]{
+            .price_unit{
+                text-transform: uppercase;
+                color: #70706E;
+                font-size: 13px;
+                font-style: italic;
+            
+            }
+        }
+    }
+
+
+} 
+
 
 
 

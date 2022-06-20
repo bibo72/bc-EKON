@@ -15,6 +15,7 @@ import adminBar from './global/adminBar';
 import carousel from './common/carousel';
 import loadingProgressBar from './global/loading-progress-bar';
 import svgInjector from './global/svg-injector';
+import checkout from './custom/checkout';
 
 export default class Global extends PageManager {
     onReady() {
@@ -35,6 +36,7 @@ export default class Global extends PageManager {
         }
         loadingProgressBar();
         svgInjector();
+        checkout();
 
         /* BundleB2B */
         $('body').append('<script src="https://cdn.bundleb2b.net/bundleb2b.3.3.0.js"></script>');
