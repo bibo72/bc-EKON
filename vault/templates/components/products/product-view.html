@@ -291,20 +291,25 @@
         {{/if}}
         <div class="productView-contactUs">
             <div class="contactUs_span">
-                <svg>
-                    <use xlink:href="#icon-schedule-demo-icon"></use>
-                </svg>
-                <span>SCHEDULE A DEMO</span>
+                <a href="/contact-us/">
+                    <svg>
+                        <use xlink:href="#icon-schedule-demo-icon"></use>
+                    </svg>
+                    <span>SCHEDULE A DEMO</span>
+                </a>
+                
             </div>
             <div class="contactUs_span">
+                <a href="/contact-us/">
                 <svg>
                     <use xlink:href="#icon-ask-question-icon"></use>
                 </svg>
-                <span>ASK A QUESTION</span>
+                <span>ASK A QUESTION</span></a>
             </div>
             <div class="contactUs_span">
-                <img src="../../../assets/img/request-sample-icon.png" alt="">
-                <span>REQUEST A SAMPLE</span>
+                <a href="/contact-us/">
+                <img src="{{cdn 'img/request-sample-icon.png'}}" alt="">
+                <span>REQUEST A SAMPLE</span></a>
             </div>
         </div>
         {{!> components/common/share}}

@@ -524,6 +524,7 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     }
 //left nav
     .page-sidebar#faceted-search-container{
+        width: 23%;
         margin-top: 0;
         //left nav Level 2 Title
         >nav>.sidebarBlock>ul>li>a{
@@ -566,6 +567,7 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     
 //right content
     .page-content{
+        width: 77%;
         h1.page-heading{
             font-size: 40px !important;
         }
@@ -853,6 +855,9 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
             font-family: "Libre Franklin";
             font-weight: bold;
             color: #133579;
+        }
+        a{
+            text-decoration: none;
         }
     }
 
