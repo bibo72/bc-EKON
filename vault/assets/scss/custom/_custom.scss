@@ -1056,7 +1056,14 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 
 //---------------Login-----------------
 #modal-login-form{
+    
     z-index: 10000000004;
+    @include breakpoint("medium") {
+        width: 80%;
+    }
+    @include breakpoint("large") {
+        width: 70%;
+    }
     .modal-body{
         padding: 50px 35px;
         div.login,div.login-row{
@@ -1065,6 +1072,7 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     }
 }
 .login{
+    max-width: 100%;
     h1.page-heading{
         color: #133579;
         text-transform: uppercase;
@@ -1143,4 +1151,36 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     }
 }
 
+//----------------CMS-Page
+[data-content-region="page_builder_content"]{
+    [data-layout-name="one_block"]{
 
+    }
+    [data-layout-name="two_block"],[data-layout-name="three_block"],[data-layout-name="four_block"],[data-layout-name="leftImg_block"],[data-layout-name="rightImg_block"],[data-layout-name="threeVideo_block"],[data-layout-name="other_block"]{
+        >div[data-sub-layout]{
+            padding-bottom: 30px;
+            padding-left: 0;
+            padding-right: 0;
+            &:last-child{
+                padding-bottom: 0;
+            }
+        }
+        @media screen and (min-width: 697px) {
+            >div[data-sub-layout]{
+                padding-bottom: 0;
+            }
+            >div[data-sub-layout]:nth-child(2){
+                padding-left: 0;
+                padding-right: 15px;
+            }
+            >div[data-sub-layout]:last-child{
+                padding-right: 0;
+                padding-left: 15px;
+            }
+        }
+    }
+    [data-layout-name="video_title"],[data-layout-name="other_title"]{
+
+    }
+
+}
