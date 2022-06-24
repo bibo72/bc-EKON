@@ -329,6 +329,11 @@ h2.page-heading.showcase-products{
 //    card
 .slick-list {
     margin-left: -1px;
+    .productCarousel-slide  a.button.button--small.card-figcaption-button{
+        width: 75%;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 .productCarousel-slide{
     padding-left: 15px;
