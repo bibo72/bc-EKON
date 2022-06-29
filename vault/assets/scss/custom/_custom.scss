@@ -1189,3 +1189,19 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     }
 
 }
+
+//----b2b login -------
+.button{
+    color: #151515;
+    &:hover{
+        color: #133579 !important;
+    }
+}
+#pc-quickorderpad-entry a{
+    white-space: nowrap; 
+    margin-right: 5px;
+}
+#quickSearch{
+    margin-left: 2.5rem;
+}
+
