@@ -1191,11 +1191,17 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 }
 
 //----b2b login -------
-.button{
+.button.action-link,.actions-field .button,.form-field .button,.button.button-filter,.filter-items .button{
     color: #151515;
-    &:hover{
-        color: #133579 !important;
+    &:hover,&:active,&:focus,&.is-active{
+        color: #133579 ;
     }
+}
+.button.button--primary{
+    color: #fff;
+}
+.button.button--small.card-figcaption-button{
+    border: none !important;
 }
 #pc-quickorderpad-entry a{
     white-space: nowrap; 
