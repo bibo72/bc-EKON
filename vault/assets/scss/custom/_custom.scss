@@ -906,6 +906,9 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 #accordion .ui-accordion-header-active svg.accordion-icon.arrow.down {
     transform: rotate(180deg);
 }
+.card-figcaption-body{
+    width: 90%;
+}
 .product .slick-list .slick-track{
 
 }
@@ -1191,12 +1194,23 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 }
 
 //----b2b login -------
-.button.action-link,.actions-field .button,.form-field .button,.button.button-filter,.filter-items .button{
+.addressBook .b2b-wrap.address-lists-wrap .search-toolbar .search-input-box input[type="text"]{
+    border-color: #133579;
+    height: 31px;
+}
+
+    
+.b2b-wrap .button,.account input.button{
     color: #151515;
     &:hover,&:active,&:focus,&.is-active{
         color: #133579 ;
     }
 }
+.b2b-wrap.button.button--primary{
+    color: #fff;
+}
+
+
 .button.button--primary{
     color: #fff;
 }
