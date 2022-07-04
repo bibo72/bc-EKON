@@ -1208,11 +1208,17 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 }
 .b2b-wrap.button.button--primary{
     color: #fff;
+    &:hover,&:active,&:focus,&.is-active{
+        color: #fff;
+    }
 }
 
 
 .button.button--primary{
     color: #fff;
+    &:hover,&:active,&:focus,&.is-active{
+        color: #fff;
+    }
 }
 .button.button--small.card-figcaption-button{
     border: none !important;
