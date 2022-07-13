@@ -1,6 +1,7 @@
 import Wishlist from '../wishlist';
 import { initRadioOptions } from './aria';
 import { isObject, isNumber } from 'lodash';
+import stockInfo from '../custom/stockInfo';
 
 const optionsTypesMap = {
     INPUT_FILE: 'input-file',
@@ -210,10 +211,11 @@ export default class ProductDetailsBase {
      * @param  {Object} data Product attribute data
      */
     updateView(data, content = null) {
+       
         const viewModel = this.getViewModel(this.$scope);
-
+        
         this.showMessageBox(data.stock_message || data.purchasing_message);
-
+        
         if (isObject(data.price)) {
             this.updatePriceView(viewModel, data.price);
         }
@@ -235,7 +237,26 @@ export default class ProductDetailsBase {
             viewModel.sku.$label.hide();
             viewModel.sku.$value.text('');
         }
-
+        const $scope = this.$scope;
+        stockInfo.getStoreInfo(data.sku,function (item){
+            $scope.find(".productView-details [data-storck-sku]")
+                .removeClass("redStock greenStock blueStock")
+                .attr("data-storck-sku",data.sku);
+            if(item.inventory_level>=100){
+                $scope.find(".productView-details [data-storck-sku]")
+                .addClass("greenStock")
+                .text("In Stock");
+            }else if(item.inventory_level>1){
+                $scope.find(".productView-details [data-storck-sku]")
+                .addClass("redStock")
+                .text("Low Stock");
+            }else{
+                $scope.find(".productView-details [data-storck-sku]")
+                .addClass("blueStock")
+                .text("Usually ships in 1-3 weeks");
+            }
+        });
+    
         // If UPC is available
         if (data.upc) {
             viewModel.upc.$value.text(data.upc);

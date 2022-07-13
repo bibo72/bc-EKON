@@ -14,9 +14,14 @@ hr.border{
 }
 [data-test-info-type="stock"]{
     font-weight:normal;
-    color: #037C11 !important;
-    &.no-stock{
+    &.greenStock{
+        color: #037C11 !important;
+    }
+    &.redStock{
         color:#D53E07 !important;
+    }
+    &.blueStock{
+        color:  #10688E !important;
     }
 }
 .modal-background{

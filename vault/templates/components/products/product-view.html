@@ -10,11 +10,8 @@
 
     <section class="productView-details">
         <div class="productView-product">
-            {{#if product.stock_level}}
-            <p class="card-text has-stock" data-test-info-type="stock">In Stock</p>
-        {{else}}
-            <p class="card-text no-stock" data-test-info-type="stock">Usually ships in 1-3 weeks</p>
-        {{/if}}
+            <p class="card-text" data-test-info-type="stock" data-storck-sku="{{product.sku}}"></p>
+
             <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
             {{#if product.sku}}
             <div class="line-item-details sku">

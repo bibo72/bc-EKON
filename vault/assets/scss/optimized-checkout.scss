@@ -528,9 +528,14 @@ li.productList-item{
             font-family: "Lato";
             &.card-text{
                 font-family: "Libre Franklin";
-                color: #D53E07;
-                &.has-stock{
-                    color: #037C11;
+                &.greenStock{
+                    color: #037C11 ;
+                }
+                &.redStock{
+                    color:#D53E07 ;
+                }
+                &.blueStock{
+                    color:  #10688E ;
                 }
             }
         }

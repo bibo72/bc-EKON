@@ -50,7 +50,7 @@
                 {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
                     {{#if show_cart_action}}
                         {{#if has_options}}
-                            <a href="{{url}}" data-event-type="product-click" class="button button--small card-figcaption-button" data-product-id="{{id}}">{{lang 'products.choose_options'}}</a>
+                            <a href="{{url}}" data-event-type="product-click" class="button button--small button--primary card-figcaption-button" data-product-id="{{id}}">{{lang 'products.choose_options'}}</a>
                         {{/if}}
                         {{#if pre_order}}
                             <a href="{{pre_order_add_to_cart_url}}" data-event-type="product-click" class="button button--small button--primary card-figcaption-button">{{lang 'products.pre_order'}}</a>
@@ -81,11 +81,7 @@
         {{/if }}
         --}}
         
-        {{#if stock_level}}
-            <p class="card-text has-stock" data-test-info-type="stock">In Stock</p>
-        {{else}}
-            <p class="card-text no-stock" data-test-info-type="stock">Usually ships in 1-3 weeks</p>
-        {{/if}}
+            <p class="card-text" data-test-info-type="stock" data-storck-sku="{{sku}}"></p>
         
         <h4 class="card-title">
             {{#if demo}}
@@ -110,16 +106,16 @@
                 {{#if theme_settings.show_product_quick_view}}
                     {{#unless demo}}
                         {{#if settings.data_tag_enabled}}
-                            <a href="#" class="button button--small card-figcaption-button quickview" data-event-type="product-click" data-product-id="{{id}}">{{lang 'products.quick_view'}}</a>
+                            <a href="#" class="button button--small button--primary card-figcaption-button quickview" data-event-type="product-click" data-product-id="{{id}}">{{lang 'products.quick_view'}}</a>
                         {{else}}
-                            <a href="#" class="button button--small card-figcaption-button quickview" data-product-id="{{id}}">{{lang 'products.quick_view'}}</a>
+                            <a href="#" class="button button--small button--primary card-figcaption-button quickview" data-product-id="{{id}}">{{lang 'products.quick_view'}}</a>
                         {{/if}}
                     {{/unless}}
                 {{/if}}
             {{/unless}}
             {{!--
             {{#if show_compare}}
-                <label class="button button--small card-figcaption-button" for="compare-{{id}}">
+                <label class="button button--small button--primary card-figcaption-button" for="compare-{{id}}">
                     {{lang 'products.compare'}} <input type="checkbox" name="products[]" value="{{id}}" id="compare-{{id}}" data-compare-id="{{id}}">
                 </label>
             {{/if}}

@@ -34,11 +34,11 @@
                         <p class="cart-item-brand">{{brand.name}}</p>
                     {{/if}}
                     --}}
-                    {{#if custom_fields}}
-                    <p class="card-text has-stock" data-test-info-type="stock">In Stock</p>
-                    {{else}}
-                    <p class="card-text no-stock" data-test-info-type="stock">Usually ships in 1-3 weeks</p>
-                    {{/if}}
+
+                    <p class="card-text" data-test-info-type="stock" data-storck-sku="{{sku}}"></p>
+
+                    <!-- <p class="card-text no-stock" data-test-info-type="stock">Usually ships in 1-3 weeks</p> -->
+
                     <h2 class="cart-item-name">
                         <a class="cart-item-name__label" href="{{url}}">{{name}}</a>
                     </h2>

@@ -63,7 +63,25 @@
                         let customData =  Promise.all(productsData);
                         customData.then(function(data){
                             data.map((item,index)=>{
+                                
                                 const $liItem = $($(".productList .productList-item")[index]);
+                                console.log($liItem);
+                                getStoreInfo(item.sku,function (data){
+                                    const stockData = data[0]
+                                    if(stockData.inventory_level>=100){
+                                        $liItem.find('[data-test="cart-item-product-title"]').before(`
+                                            <p class="card-text greenStock" data-test-info-type="stock" data-storck-sku="${item.sku}">In Stock</p>
+                                        `);
+                                    }else if(stockData.inventory_level>1){
+                                        $liItem.find('[data-test="cart-item-product-title"]').before(`
+                                            <p class="card-text redStock" data-test-info-type="stock" data-storck-sku="${item.sku}">Low Stock</p>
+                                        `);
+                                    }else{
+                                        $liItem.find('[data-test="cart-item-product-title"]').before(`
+                                            <p class="card-text blueStock" data-test-info-type="stock" data-storck-sku="${item.sku}">Usually ships in 1-3 weeks</p>
+                                        `);
+                                    }
+                                });
                                 $liItem.find("ul.product-options").after(`
                                     <p class="pro-sku" data-sku="${item.sku}">SKU: ${item.sku}</p>
                                 `);
@@ -188,4 +206,24 @@
                 });
         });
             }
+    function getStoreInfo(skus,returnFun){
+        const sku = {sku : skus};
+        $.ajax({
+            url: 'http://api.ekon-opac.silksoftware.net/api/v1/catalog/products/batch-inventorys',
+            method: 'POST',
+            headers: {
+                'X-Auth-Token': '12345abc',
+                'X-storeHash': "{{settings.store_hash}}", //当前店铺的storehash， 需要动态获取
+            },
+            data: JSON.stringify(sku),
+            success: function (res) {
+                // console.log(res);
+                returnFun(res.data.list);
+            },
+            error: function (err) {
+                console.log(err)
+                returnFun(err);
+            }
+        })
+    }
 </script>
