@@ -7,7 +7,7 @@ const stockInfo ={
         })
         const skuStr= {sku : skuList.join()};
         $.ajax({
-            url: 'http://api.ekon-opac.silksoftware.net/api/v1/catalog/products/batch-inventorys',
+            url: 'https://api.ekon-opac.silksoftware.net/api/v1/catalog/products/batch-inventorys',
             method: 'POST',
             headers: {
                 'X-Auth-Token': '12345abc',
@@ -41,7 +41,7 @@ const stockInfo ={
         const store_hash = window.jsContext.store_hash;
         const skus = {sku : sku};
         $.ajax({
-            url: 'http://api.ekon-opac.silksoftware.net/api/v1/catalog/products/batch-inventorys',
+            url: 'https://api.ekon-opac.silksoftware.net/api/v1/catalog/products/batch-inventorys',
             method: 'POST',
             headers: {
                 'X-Auth-Token': '12345abc',

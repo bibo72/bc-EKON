@@ -209,7 +209,7 @@
     function getStoreInfo(skus,returnFun){
         const sku = {sku : skus};
         $.ajax({
-            url: 'http://api.ekon-opac.silksoftware.net/api/v1/catalog/products/batch-inventorys',
+            url: 'https://api.ekon-opac.silksoftware.net/api/v1/catalog/products/batch-inventorys',
             method: 'POST',
             headers: {
                 'X-Auth-Token': '12345abc',
