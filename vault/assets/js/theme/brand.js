@@ -3,6 +3,7 @@ import CatalogPage from './catalog';
 import compareProducts from './global/compare-products';
 import FacetedSearch from './common/faceted-search';
 import { createTranslationDictionary } from '../theme/common/utils/translations-utils';
+import stockInfo from './custom/stockInfo';
 
 export default class Brand extends CatalogPage {
     constructor(context) {
@@ -51,7 +52,7 @@ export default class Brand extends CatalogPage {
         this.facetedSearch = new FacetedSearch(requestOptions, (content) => {
             $productListingContainer.html(content.productListing);
             $facetedSearchContainer.html(content.sidebar);
-
+            stockInfo.getCardStockInfo();
             $('body').triggerHandler('compareReset');
 
             $('html, body').animate({

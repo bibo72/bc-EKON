@@ -6,6 +6,7 @@ import modalFactory from '../global/modal';
 import collapsibleFactory from './collapsible';
 import { Validators } from './utils/form-utils';
 import nod from './nod';
+import stockInfo from "../custom/stockInfo";
 
 const defaultOptions = {
     accordionToggleSelector: '#facetedSearch .accordion-navigation, #facetedSearch .facetedSearch-toggle',
@@ -308,6 +309,7 @@ class FacetedSearch {
         hooks.on('facetedSearch-facet-clicked', this.onFacetClick);
         hooks.on('facetedSearch-range-submitted', this.onRangeSubmit);
         hooks.on('sortBy-submitted', this.onSortBySubmit);
+        stockInfo.getCardStockInfo();
     }
 
     unbindEvents() {

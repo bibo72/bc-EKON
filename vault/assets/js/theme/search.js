@@ -7,6 +7,7 @@ import Url from 'url';
 import collapsibleFactory from './common/collapsible';
 import 'jstree';
 import nod from './common/nod';
+import stockInfo from './custom/stockInfo';
 
 const leftArrowKey = 37;
 const rightArrowKey = 39;
@@ -325,7 +326,7 @@ export default class Search extends CatalogPage {
                 $searchCount.html(content.productCount);
                 this.showProducts(false);
             }
-
+            stockInfo.getCardStockInfo();
             $('body').triggerHandler('compareReset');
 
             $('html, body').animate({
