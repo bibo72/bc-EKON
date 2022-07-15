@@ -66,7 +66,6 @@ export default class Search extends CatalogPage {
         this.$contentResultsContainer.removeClass('u-hidden');
         this.$productListingContainer.addClass('u-hidden');
         this.$facetedSearchContainer.addClass('u-hidden');
-
         $('[data-product-results-toggle]').removeClass('navBar-action-color--active');
         $('[data-product-results-toggle]').addClass('navBar-action');
 
@@ -325,13 +324,16 @@ export default class Search extends CatalogPage {
                 $facetedSearchContainer.html(content.sidebar);
                 $searchCount.html(content.productCount);
                 this.showProducts(false);
+                
             }
-            stockInfo.getCardStockInfo();
+            
             $('body').triggerHandler('compareReset');
 
             $('html, body').animate({
                 scrollTop: 0,
             }, 100);
+            
+            stockInfo.getCardStockInfo();
         }, {
             validationErrorMessages: {
                 onMinPriceError,

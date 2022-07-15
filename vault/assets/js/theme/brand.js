@@ -52,12 +52,12 @@ export default class Brand extends CatalogPage {
         this.facetedSearch = new FacetedSearch(requestOptions, (content) => {
             $productListingContainer.html(content.productListing);
             $facetedSearchContainer.html(content.sidebar);
-            stockInfo.getCardStockInfo();
+            
             $('body').triggerHandler('compareReset');
-
             $('html, body').animate({
                 scrollTop: 0,
             }, 100);
+            stockInfo.getCardStockInfo();
         }, {
             validationErrorMessages: {
                 onMinPriceError,

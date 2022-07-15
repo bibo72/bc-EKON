@@ -513,7 +513,7 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
 }
 
 //--------------PLP-----------------------
-.page{
+.container > .page{
     //left nav Level 1 Title AND right level 1 Title
     .sidebarBlock-heading,.accordion-title,.toggleLink,.page-heading{
         font-size: 18px;
@@ -576,7 +576,7 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     }
     
 //right content
-    .page-content{
+    .page-sidebar ~ .page-content{
         width: 77%;
         h1.page-heading{
             font-size: 40px !important;

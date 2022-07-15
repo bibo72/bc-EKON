@@ -246,7 +246,7 @@ export default class ProductDetailsBase {
                 $scope.find(".productView-details [data-storck-sku]")
                 .addClass("greenStock")
                 .text("In Stock");
-            }else if(item.inventory_level>1){
+            }else if(item.inventory_level>0){
                 $scope.find(".productView-details [data-storck-sku]")
                 .addClass("redStock")
                 .text("Low Stock");

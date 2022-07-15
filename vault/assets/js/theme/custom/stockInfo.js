@@ -21,7 +21,7 @@ const stockInfo ={
                         $("[data-storck-sku='"+item.sku+"']")
                         .addClass("greenStock")
                         .text("In Stock");
-                    }else if(item.inventory_level>1){
+                    }else if(item.inventory_level>0){
                         $("[data-storck-sku='"+item.sku+"']")
                         .addClass("redStock")
                         .text("Low Stock");
