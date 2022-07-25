@@ -421,6 +421,7 @@ article.card {
 
 //  footer
 div.newsletter-subscription-section{
+    margin-top: 0 !important;
     border:none;
     background-image:url("https://cdn11.bigcommerce.com/s-g0h3me329n/product_images/uploaded_images/newsletter-background.png");
     background-repeat: no-repeat;
@@ -452,6 +453,7 @@ div.newsletter-subscription-section{
     
 }
 footer.footer{
+    margin-top: 0 !important;
     .footer-info{
         article.footer-info-col{
             padding-left: 30px;
