@@ -1236,3 +1236,10 @@ div#menu-wrapper.single-line #menu.fixed .mega-cat-nav{
     margin-left: 2.5rem;
 }
 
+//home footer banner
+[data-layout-name="home_footer_banner"]{
+    display: none !important;
+}
+.home [data-layout-name="home_footer_banner"]{
+    display: block !important;
+}
